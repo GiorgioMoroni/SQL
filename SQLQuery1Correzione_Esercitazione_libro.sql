@@ -1,0 +1,29 @@
+USE acc_lez28_Correzione_Esercitazione_libri;
+CREATE TABLE Libro(
+	libroId INT PRIMARY KEY IDENTITY(1,1),
+	titolo VARCHAR(250) NOT NULL,
+	annoPub INT NOT NULL,
+	isDisponibile BIT NOT NULL DEFAULT 1,
+	isbn VARCHAR(50) NOT NULL UNIQUE,
+	deleted DATETIME				-- SOFT DELETE
+);
+
+CREATE TABLE Utente(
+	utenteId INT PRIMARY KEY IDENTITY(1,1),
+	nome VARCHAR(250) NOT NULL,
+	cognome VARCHAR(250) NOT NULL,
+	email VARCHAR(250) NOT NULL,
+	codice_utente VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE Prestito(
+	prestitoId INT PRIMARY KEY IDENTITY(1,1),
+	dataPrestito DATETIME DEFAULT CURRENT_TIMESTAMP,
+	dataRitorno DATETIME,
+	utenteRIF INT NOT NULL,
+	libroRIF INT NOT NULL,
+	codicePrestito VARCHAR(50) NOT NULL UNIQUE,
+	FOREIGN KEY (utenteRIF) REFERENCES Utente(utenteId),
+	FOREIGN KEY (libroRIF) REFERENCES Libro(libroId),
+	deleted DATETIME
+);

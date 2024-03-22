@@ -68,5 +68,7 @@ SELECT *
 
 -- RIGHT JOIN = INNER JOIN
 
+SELECT * FROM Persona;
+
 
 

@@ -1,3 +1,4 @@
+USE acc_lez27_Esercitazione_libri;
 CREATE TABLE Libro(
 	IdLibro INT PRIMARY KEY IDENTITY(1,1),
 	Titolo VARCHAR(250) NOT NULL,

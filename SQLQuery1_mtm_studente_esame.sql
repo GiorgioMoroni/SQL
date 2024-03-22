@@ -1,4 +1,5 @@
 --DDL
+USE acc_lez09_mtm_universita;
 DROP TABLE IF EXISTS Studente_Esame;
 DROP TABLE IF EXISTS Studente;
 DROP TABLE IF EXISTS Esame;
