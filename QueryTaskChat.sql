@@ -1,0 +1,7 @@
+USE TaskChat;
+
+CREATE TABLE Utente (
+	utenteID INT PRIMARY KEY IDENTITY (1,1),
+	nomeUtente VARCHAR (50) NOT NULL UNIQUE,
+	password VARCHAR (32) NOT NULL UNIQUE
+);
